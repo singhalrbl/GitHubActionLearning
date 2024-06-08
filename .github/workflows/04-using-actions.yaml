@@ -2,7 +2,7 @@ name: 04 - using Actions
 on: workflow_dispatch
 jobs:
     build:
-        runs-on: unbuntu-latest
+        runs-on: ubuntu-latest
         steps:
             - name: checkout Code
               uses: actions/checkout@v4
