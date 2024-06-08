@@ -1,0 +1,36 @@
+name: Run Databricks Notebooks
+description: Fill out this form to schedule and run Databricks notebooks.
+title: "[Run Notebook] - "
+labels: [run-notebook]
+
+body:
+  - type: input
+    id: crontab
+    attributes:
+      label: Crontab Schedule
+      description: Enter the crontab schedule (e.g., '0 0 * * *' for daily at midnight).
+      placeholder: "0 0 * * *"
+    validations:
+      required: true
+
+  - type: input
+    id: email
+    attributes:
+      label: Your Email
+      description: Enter the email address to receive the notification.
+      placeholder: "your-email@example.com"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notebooks
+    attributes:
+      label: Notebooks
+      description: | 
+                  Enter the notebook paths and dependencies in JSON format. Example
+                   [
+                     {"notebook": "/Repos/username/repo/notebooks/notebook1.py", "depends_on": []},
+                     {"notebook": "/Repos/username/repo/notebooks/notebook2.py", "depends_on": ["/Repos/username/repo/notebooks/notebook1.py"]}
+                   ]
+    validations:
+      required: true
