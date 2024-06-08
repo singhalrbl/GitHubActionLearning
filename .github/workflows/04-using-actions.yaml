@@ -1,0 +1,14 @@
+name: 04 - using Actions
+on: workflow_dispatch
+jobs:
+    build:
+        runs-on: unbuntu-latest
+        steps:
+            - name: checkout Code
+              uses: actions/checkout@v4
+            - name: printing Folders
+              run: ls
+        #0. Checkout the code from the repository
+        #1. Install deps of our rect application
+        #2. Execute automated tests
+
